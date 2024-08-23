@@ -128,13 +128,9 @@ fn main() -> Result<(), AppError> {
                     }
                 }
                 Icmpv6Types::TimeExceeded => break PingResponse::TimeExceeded(response_addr),
-                Icmpv6Types::NeighborAdvert
-                | Icmpv6Types::NeighborSolicit
-                | Icmpv6Types::RouterAdvert
-                | Icmpv6Types::RouterSolicit => {
-                    // Do nothing
+                _ => {
+                    // Ignore
                 }
-                unhandled => todo!("Unhandled: {unhandled:#?}"),
             }
 
             // break Ok(response_addr);
