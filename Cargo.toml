@@ -1,0 +1,11 @@
+[package]
+name = "net_hier"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+error-stack = "0.5.0"
+pnet = "0.35.0"
+thiserror = "1.0.63"
+tokio = { version = "1.39.3", features = ["full", "tracing"] }
+tracing = "0.1.40"
